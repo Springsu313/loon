@@ -1,0 +1,153 @@
+[General]
+# IPv6 支持
+ipv6 = false
+# > 跳过某个域名或者IP段
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,passenger.t3go.cn,passenger.t3go.cn
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+# DNS 服务器
+dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
+# Wi-Fi 访问
+# > 允许 Wi-Fi 网络下其它设备访问
+allow-udp-proxy = false
+allow-wifi-access = false
+wifi-access-http-port = 7222
+wifi-access-socket5-port = 7221
+# > 代理测速 URL
+proxy-test-url = http://www.gstatic.com/generate_204
+# > 测速超时 (s)
+test-timeout = 5
+interface-mode = auto
+# > 解决一些ip请求无法匹配域名类规则的问题。real-ip指定的域名将不返回fake ip响应，直接将dns请求发往目标dns服务器
+real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+# 解析器
+resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scripts/sub-store-parser.js
+# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
+# ssid-trigger="default":rule,"cellular":rule,"ASUS":direct,"TPLINK":proxy 
+
+[Host]
+
+[Proxy]
+
+[Remote Proxy]
+二号机场 = https://sub.store/download/numbertwo,udp=false,fast-open=false,vmess-aead=true,img-url=https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/3800024.png
+一号机场 = https://gfwairport.icu/api/v1/client/subscribe?token=e030dbe3ca954a521ec9feb134718b44,udp=true,fast-open=true,vmess-aead=true,img-url=https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/3800024.png
+
+[Proxy Group]
+HK自动选择 = url-test,香港,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 3000,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/AA.png
+节点选择 = select,HK自动选择,US-LD,狮城节点,日本节点,韩国节点,台湾节点,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/3698156.png
+FINAL = select,DIRECT,节点选择,HK自动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+可用性检查 = fallback,一号,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+US-LD = url-test,美国,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
+苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+Tiktok = select,日本节点,韩国节点,狮城节点,台湾节点,香港节点,美国节点,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/tik-tok.png
+spotify = select,美国,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/spotify.png
+奈飞视频 = select,节点选择,狮城节点,香港节点,台湾节点,美国节点,日本节点,韩国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix_Letter.png
+巴哈姆特 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
+油管视频 = select,节点选择,香港节点,狮城节点,韩国节点,美国节点,US-LD,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/youtube.png
+电报消息 = select,节点选择,可用性检查,香港节点,狮城节点,美国节点,日本节点,韩国节点,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/telegram.png
+国外媒体 = select,节点选择,狮城节点,香港节点,台湾节点,韩国节点,美国节点,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/social-media.png
+港台番剧 = select,DIRECT,台湾节点,香港节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_4.png
+香港节点 = select,香港,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/hong-kong.png
+台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/taiwan.png
+狮城节点 = select,新加坡,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/singapore.png
+韩国节点 = select,韩国,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/korea.png
+日本节点 = select,日本,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/japan.png
+美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Springsu313/quantumult/main/icon/united-states-of-america.png
+
+[Remote Filter]
+一号 = NameKeyword,一号机场, FilterKey = "B"
+香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
+台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
+日本 = NameRegex, FilterKey = "(?i)(日本|Tokyo|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+韩国 = NameRegex, FilterKey = "(?i)(KR|Korea|Incheon|KOR|首尔|韩|韓)"
+美国 = NameRegex, FilterKey = "(?i)(美|California|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
+
+[Remote Rule]
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list, policy=REJECT, tag=运营劫持, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list, policy=REJECT, tag=隐私保护, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad-qx.list, policy=REJECT, tag=贴吧广告, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list, policy=DIRECT, tag=规则修正, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/AdvertisingPlus.list, policy=REJECT, tag=广告拦截, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list, policy=REJECT, tag=广告拦截, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list, policy=REJECT, tag=去广告, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Advertising/Advertising_Domain.list, policy=REJECT, tag=去广告, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list, policy=苹果服务, tag=苹果服务, enabled=true
+https://raw.githubusercontent.com/Springsu313/quantumult/main/spotify.list, policy=spotify, tag=spotify, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/NetEaseMusic/NetEaseMusic.list, policy=网易音乐, tag=网易音乐, enabled=false
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTube/YouTube.list, policy=油管视频, tag=油管视频, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Bahamut/Bahamut.list, policy=巴哈姆特, tag=巴哈姆特, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list, policy=节点选择, tag=国外媒体, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=港台番剧, tag=港台番剧, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list, policy=节点选择, tag=全球规则, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy_Domain.list, policy=节点选择, tag=全球规则, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/ChinaIP.list, policy=DIRECT, tag=国内IP, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
+
+[Rule]
+DOMAIN-SUFFIX,jable.tv,REJECT
+DOMAIN,rsshub.app,节点选择
+#GEOIP,CN,DIRECT
+FINAL,FINAL
+
+[URL Rewrite]
+enable = false
+# 京东比价Fix
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start reject-200
+
+[Remote Rewrite]
+
+[Script]
+#流媒体解锁查询
+enable = false
+#哔哩哔哩
+http-response ^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/v\d\/search\/defaultwords)\?access_key script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js, requires-body=true, timeout=10, enabled=false, tag=bili自动地区
+http-request ^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)& script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js, requires-body=true, timeout=10, enabled=false, tag=bili自动地区(搜索)
+#spotify
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=10, tag=spotifyProto
+#bilibili 领币
+http-request ^https:\/\/(m|api)\.bilibili\.com\/(x\/v\d\/history\/shadow|service-worker).* script-path=https://raw.githubusercontent.com/cyubuchen/scripts/master/cookie/bilibiliCoins.js, timeout=10, enabled=false, tag=bilibiliCoinsCookie
+cron "25 15 * * *" script-path=https://raw.githubusercontent.com/cyubuchen/scripts/master/task/bilibiliCoins.js, enabled=false, tag=bilibiliCoins
+
+[Remote Script]
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Fake_Vip.conf, tag=Fake-VIP, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=true
+
+[Plugin]
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/MediaCheck.plugin, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, tag=Loon Gallery, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Block/WeiboAds.plugin, tag=Weibo, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Weather.plugin, tag= iRingo for Apple Weather, enabled=true
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Loon/TikTokJP.plugin, policy=TIKTOK, tag=Tiktok, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=Sub-Store, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/bilibili.plugin, tag=哔哩哔哩, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokTW.plugin, policy=Tiktok, tag=US, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokUK.plugin, policy=Tiktok, tag=UK, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokTW.plugin, policy=Tiktok, tag=TW, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, policy=Tiktok, tag=KR, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokJP.plugin, policy=Tiktok, tag=JP, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Block/YouTubeAds.plugin, tag=YouTube去广告, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/ChangeUA.plugin, tag=ChangeUA, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Q-Search_All_in_one.plugin, tag=Q-Search, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, policy=DIRECT, tag=Host, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Price.plugin, tag=JD/TB.Price, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Loon/Plugin/ZhiHu.plugin, tag=知乎去广告, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, tag=BoxJs, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/DNS/DNS.plugin, tag=🌐 DNS for Router and Companys, enabled=false
+
+[MITM]
+hostname = ap?.bilibili.com,ap?.biliapi.net,m.bilibili.com
+tcp-connection = true
+ca-p12 = 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
+ca-passphrase = U63U618P
+enable = false
+skip-server-cert-verify = true
